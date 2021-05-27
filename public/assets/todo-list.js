@@ -17,23 +17,20 @@ $(document).ready(function () {
         return false;
     });
 
-    $('li').on('click',function()
-    {
-        var item = $(this).text().trim().replace(/ /g, "-");
-        $.ajax({
-            type:'DELETE',
-            url :'/todo/'+item,
-            success:function (data) {
-                alert("item deleted");
-                location.reload();
-            },
-            error:function () {
-                alert("Delete unsuccess");
+    // $('li').on('click',function()
+    // {
+    //     var item = $(this).text().trim().replace(/ /g, "-");
+    //     $.ajax({
+    //         type:'DELETE',
+    //         url :'/todo/'+item,
+    //         success:function (data) {
+               
+    //             location.reload();
+    //         }
                 
-            }
+    //         });
             
-        })   
-    })
+    //     })  
     
     
 });
