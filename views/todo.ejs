@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1>My To-Do List</h1>
     <div id="todo-table">
 
         <form id="todo-form" method = "POST">
@@ -27,6 +28,24 @@
         </form>
 
     </div>
+    <script>
+        $('li').on('click',function()
+    {
+        var item = $(this).text().trim().replace(/ /g, "-");
+        $.ajax({
+            type:'DELETE',
+            url :'/todo/'+item,
+            success:function (data) {
+                alert("item deleted");
+                location.reload();
+            },
+            error:function () {
+                alert("Delete unsuccess");
+                
+            }
+            
+        })  
+    </script>
 
 </body>
 
