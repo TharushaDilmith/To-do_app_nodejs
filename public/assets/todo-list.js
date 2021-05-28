@@ -1,21 +1,21 @@
 $(document).ready(function () {
 
-    $('#todo-form').on('submit',function(){
+    // $('#todo-form').on('submit',function(){
         
-        var todo = ("input[nmae = item]").val();
+    //     var todo = ("input[nmae = item]").val();
 
-        $.ajax({
-            type:'POST',
-            url:'/todo',
-            data:todo,
-            success:function(data)
-            {
-                location.reload();
+    //     $.ajax({
+    //         type:'POST',
+    //         url:'/todo',
+    //         data:todo,
+    //         success:function(data)
+    //         {
+    //             location.reload();
                 
-            }
-        });
-        return false;
-    });
+    //         }
+    //     });
+    //     return false;
+    // });
 
     // $('li').on('click',function()
     // {

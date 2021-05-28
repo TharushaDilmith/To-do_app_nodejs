@@ -13,9 +13,12 @@
     <h1>My To-Do List</h1>
     <div id="todo-table">
 
+        
         <form id="todo-form" method = "POST">
+            
             <input type="text" id="item" name="item" placeholder="Add new item..."required/>
             <button type="submit">Add Item</button>
+            </form>
 
             <ul>
                 <% for(var i =0; i<todos.length ;i++)
@@ -25,13 +28,13 @@
 
             </ul>
 
-        </form>
+    
 
     </div>
     <script>
     $('li').on('click',function()
     {
-        var item = $(this).text().trim().replace(/ /g, "-");
+        var item = $(this).text().trim().replace(/ /g,"-");
         $.ajax({
             type:'DELETE',
             url :'/todo/'+item,
@@ -43,6 +46,23 @@
             });
             
         })  
+
+        $('#todo-form').on('submit',function(){
+        
+        var todo = ("input[name = item]").val();
+
+        $.ajax({
+            type:'POST',
+            url:'/todo',
+            data:todo,
+            success:function(data)
+            {
+                
+                
+            }
+        });
+        return false;
+    });
     </script>
 
 </body>

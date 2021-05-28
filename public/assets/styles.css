@@ -64,7 +64,8 @@ li:hover{
 }
 
 h1{
-    background: url(/logo.png) no-repeat center;
+    
     margin-bottom: 0;
     text-indent: -10000px;
+    color: #fff;
 }
